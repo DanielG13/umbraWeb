@@ -15,13 +15,13 @@ class LoginPage extends Component {
       <div className="dashboard">
         <section className="section">
           <div className="container">
-            <div class="columns is-centered is-vcentered is-multiline">
-              <div class="column is-full is-clearfix has-text-centered">
+            <div className="columns is-centered is-vcentered is-multiline">
+              <div className="column is-full is-clearfix has-text-centered">
                 <figure className="image logo logo-login">
                   <img src={logo} alt="Image" />
                 </figure>
               </div>
-              <div class="column is-one-third is-clearfix has-text-centered">
+              <div className="column is-one-third is-clearfix has-text-centered">
                 <div className="card is-radius">
                   <div className="card-content">
                     <div className="content">

@@ -80,7 +80,7 @@ class FormComponent extends  React.Component {
               <FontAwesomeIcon icon={faUser} />
             </span>
           </div>
-          {errors.username && <p class="help is-danger">{errors.username}</p>}
+          {errors.username && <p className="help is-danger">{errors.username}</p>}
         </div>
         <div className="field">
         <label>Password</label>
@@ -96,7 +96,7 @@ class FormComponent extends  React.Component {
               <FontAwesomeIcon icon={faLock} />
             </span>
           </div>
-          {errors.password && <p class="help is-danger">{errors.password}</p>}
+          {errors.password && <p className="help is-danger">{errors.password}</p>}
         </div>
         <div className="field">
           <p className="control">
