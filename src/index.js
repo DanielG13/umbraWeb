@@ -1,35 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import thunk from 'redux-thunk';
-import { createStore, applyMiddleware, compose } from 'redux';
-import setAuthorizationToken from './redux/utils/setAuthorizationToken';
-import stores from './redux/store'
-import jwtDecode from 'jwt-decode';
-import { setCurrentUser } from './redux/actions/auth.action';
-import App from "./layouts/App"
-import "./assets/styles/app.scss";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-const store = createStore(
-  stores,
-  compose(
-    applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : f => f
-  )
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-if (localStorage.jwtToken) {
-  setAuthorizationToken(localStorage.jwtToken);
-  store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
-}
-
-const Root = (
-  <Provider store={store}>
-    <BrowserRouter >
-      <App />
-    </BrowserRouter>
-  </Provider>
-);
-
-ReactDOM.render(Root, document.getElementById("root"));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
